@@ -4,8 +4,9 @@ import mutations from "./mutations";
 
 const store = {
   state: {
-    list: [{ id: 0, name: "ok" }],
-    character: {}
+    list: [],
+    character: {},
+    match: []
   },
   actions,
   getters,

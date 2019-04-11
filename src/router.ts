@@ -17,6 +17,11 @@ export default new Router({
       path: "/:id",
       name: "character",
       component: () => import("./views/Characters/CharacterView.vue")
+    },
+    {
+      path: "/match/:first/:second",
+      name: "match",
+      component: () => import("./views/Characters/CharacterChallenge.vue")
     }
   ]
 });

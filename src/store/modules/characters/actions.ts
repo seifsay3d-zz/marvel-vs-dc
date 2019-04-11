@@ -10,5 +10,10 @@ export default {
     CharactersAPI.getCharacter(id)
       .then((res: any) => context.commit("updateCharacter", res.data))
       .catch((err: any) => context.commit("updateCharacter", err));
+  },
+  getMatch(context: any, match: any) {
+    CharactersAPI.getMatch(match.first, match.second)
+      .then((res: any) => context.commit("updateMatch", res.data))
+      .catch((err: any) => context.commit("updateMatch", err));
   }
 };
