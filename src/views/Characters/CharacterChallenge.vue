@@ -9,19 +9,22 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { mapState, mapActions } from "vuex";
 import CharacterThumb from "@/components/themes/marvel/CharacterThumb.vue";
+import { RootState } from "@/types";
 
 @Component({
   components: {
     CharacterThumb
   },
   computed: mapState({
-    match: state => state.characters.match
+    match: (state: RootState) => state.characters.match
   }),
-  methods: mapActions(["getMatch"])
+  methods: {
+    ...mapActions(["characters/getCharacters"])
+  }
 })
 export default class CharacterChallenge extends Vue {
-  created() {
-    this.getMatch({
+  created(): void {
+    this["characters/getMatch"]({
       first: this.$route.params.first,
       second: this.$route.params.second
     });

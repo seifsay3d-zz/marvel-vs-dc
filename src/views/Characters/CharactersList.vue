@@ -15,6 +15,7 @@ import Component from "vue-class-component";
 import SH1 from "@/components/user-interface/c-header1";
 import CharacterThumb from "@/components/themes/marvel/CharacterThumb.vue";
 import { mapState, mapActions } from "vuex";
+import { RootState } from "@/types";
 
 @Component({
   components: {
@@ -22,13 +23,13 @@ import { mapState, mapActions } from "vuex";
     CharacterThumb
   },
   computed: mapState({
-    characters: state => state.characters.list
+    characters: (state: RootState) => state.characters.list
   }),
-  methods: mapActions(["getCharacters"])
+  methods: mapActions(["characters/getCharacters"])
 })
 export default class CharacterList extends Vue {
-  created() {
-    this.getCharacters();
+  created(): void {
+    this[`characters/getCharacters`]();
   }
 }
 </script>
