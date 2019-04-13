@@ -2,9 +2,22 @@
   <div>
     <!-- banner -->
     <s-h1>Welcome to $World Name</s-h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis nostrum neque vitae porro maiores illo doloremque voluptatem error repudiandae.</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis
+      nostrum neque vitae porro maiores illo doloremque voluptatem error
+      repudiandae.
+    </p>
     <!-- end banner -->
-    <router-link v-for="char in characters" :to="{name: 'character', params: { id: char.id}}">
+    <router-link
+      v-for="char in characters"
+      :key="char.name"
+      :to="{
+        name: 'character',
+        params: {
+          id: char.id
+        }
+      }"
+    >
       <character-thumb :key="char.name" :name="char.name"></character-thumb>
     </router-link>
   </div>

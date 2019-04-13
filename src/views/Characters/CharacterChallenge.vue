@@ -1,7 +1,14 @@
 <template>
   <div v-if="match.first && match.second">
-    <character-thumb :key="match.first.id" :name="match.first.name"></character-thumb>vs
-    <character-thumb :key="match.second.id" :name="match.second.name"></character-thumb>
+    <character-thumb
+      :key="match.first.id"
+      :name="match.first.name"
+    ></character-thumb
+    >vs
+    <character-thumb
+      :key="match.second.id"
+      :name="match.second.name"
+    ></character-thumb>
   </div>
 </template>
 <script lang="ts">
