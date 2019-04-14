@@ -15,6 +15,7 @@ import { mapState, mapActions } from "vuex";
   methods: mapActions(["characters/getCharacter"])
 })
 export default class CharacterView extends Vue {
+  private "characters/getCharacter": any;
   created(): void {
     this["characters/getCharacter"](this.$route.params.id);
   }

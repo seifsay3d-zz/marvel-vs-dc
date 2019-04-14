@@ -41,6 +41,9 @@ import { RootState } from "@/types";
   methods: mapActions(["characters/getCharacters"])
 })
 export default class CharacterList extends Vue {
+  private characters: any;
+  private "characters/getCharacters": any;
+
   created(): void {
     this[`characters/getCharacters`]();
   }

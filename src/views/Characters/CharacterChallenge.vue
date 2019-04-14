@@ -30,6 +30,8 @@ import { RootState } from "@/types";
   }
 })
 export default class CharacterChallenge extends Vue {
+  private "characters/getMatch": any;
+
   created(): void {
     this["characters/getMatch"]({
       first: this.$route.params.first,
