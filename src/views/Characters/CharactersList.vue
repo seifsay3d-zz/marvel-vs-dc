@@ -25,7 +25,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import SH1 from "@/components/user-interface/c-header1";
+import SH1 from "@/components/user-interface/mdc-header";
 import CharacterThumb from "@/components/themes/marvel/CharacterThumb.vue";
 import { mapState, mapActions } from "vuex";
 import { RootState } from "@/types";
