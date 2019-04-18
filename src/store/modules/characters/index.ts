@@ -7,7 +7,8 @@ import mutations from "./mutations";
 const state: CharactersState = {
   list: [],
   character: null,
-  match: []
+  match: null,
+  matches: []
 };
 
 const store = {

@@ -17,14 +17,19 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import SThumb from "@/components/shared/character-thumbs.ts";
+import { Character } from "@/types";
 
-@Component({
+const options = Vue.extend({
   props: {
     character: {
       type: Object,
-      required: true
+      required: true,
+      default: null
     }
-  },
+  }
+});
+
+@Component<CharacterThumb>({
   components: {
     SThumb
   },
@@ -34,7 +39,7 @@ import SThumb from "@/components/shared/character-thumbs.ts";
     }
   }
 })
-export default class CharacterThumb extends Vue {
+export default class CharacterThumb extends options {
   isSelected = false;
 
   select(): void {

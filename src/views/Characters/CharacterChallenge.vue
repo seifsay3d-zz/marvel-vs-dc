@@ -1,21 +1,14 @@
 <template>
-  <div v-if="match.first && match.second">
-    <character-thumb
-      :key="match.first.id"
-      :name="match.first.name"
-    ></character-thumb
-    >vs
-    <character-thumb
-      :key="match.second.id"
-      :name="match.second.name"
-    ></character-thumb>
+  <div v-if="match">
+    <character-thumb :character="match.first"></character-thumb>vs
+    <character-thumb :character="match.second"></character-thumb>
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
 import { mapState, mapActions } from "vuex";
-import CharacterThumb from "@/components/themes/marvel/CharacterThumb.vue";
+import CharacterThumb from "@/components/CharacterThumb.vue";
 import { RootState } from "@/types";
 
 @Component({
@@ -26,11 +19,11 @@ import { RootState } from "@/types";
     match: (state: RootState) => state.characters.match
   }),
   methods: {
-    ...mapActions(["characters/getCharacters"])
+    ...mapActions(["characters/getMatch"])
   }
 })
 export default class CharacterChallenge extends Vue {
-  private "characters/getMatch": any;
+  "characters/getMatch": any;
 
   created(): void {
     this["characters/getMatch"]({

@@ -23,7 +23,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import SH1 from "@/components/user-interface/mdc-header";
-import CharacterThumb from "@/components/themes/marvel/CharacterThumb.vue";
+import CharacterThumb from "@/components/CharacterThumb.vue";
 import { mapState, mapActions } from "vuex";
 import { RootState, Character } from "@/types";
 
@@ -41,8 +41,8 @@ import { RootState, Character } from "@/types";
   methods: mapActions(["characters/getCharacters"])
 })
 export default class CharacterList extends Vue {
-  private characters: any;
-  private "characters/getCharacters": any;
+  characters: any;
+  "characters/getCharacters": any;
 
   matchedCharacters: Character[] = [];
 

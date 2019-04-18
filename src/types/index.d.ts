@@ -6,7 +6,8 @@ export interface Character {
 export interface CharactersState {
   list: Character[];
   character: Character | null;
-  match: Character[];
+  match: Match | null;
+  matches: Match[] | null;
 }
 
 export interface CharacterMatch {
@@ -16,4 +17,12 @@ export interface CharacterMatch {
 
 export interface RootState {
   characters: CharactersState;
+}
+
+export interface CharacterStatus extends Character {
+  votes: number;
+}
+export interface Match {
+  first: CharacterStatus;
+  second: CharacterStatus;
 }

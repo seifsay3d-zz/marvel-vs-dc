@@ -1,5 +1,5 @@
 <template>
-  <div v-if="character">{{character.name}}</div>
+  <div v-if="character">{{ character.name }}</div>
 </template>
 <script lang="ts">
 import Vue from "vue";

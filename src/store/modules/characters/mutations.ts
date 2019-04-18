@@ -1,4 +1,4 @@
-import { Character, CharactersState } from "@/types/index.d.ts";
+import { Character, CharactersState, Match } from "@/types/index.d.ts";
 
 export default {
   updateCharacterList(state: CharactersState, list: Character[]) {
@@ -7,7 +7,10 @@ export default {
   updateCharacter(state: CharactersState, character: Character) {
     state.character = character;
   },
-  updateMatch(state: CharactersState, characters: Character[]) {
-    state.match = characters;
+  updateMatch(state: CharactersState, match: Match) {
+    state.match = match;
+  },
+  updateMatches(state: CharactersState, matches: Match[]) {
+    state.matches = matches;
   }
 };
