@@ -18,9 +18,9 @@
             }"
           >Show</router-link>
         </li>
-        <li>
+        <li v-if="isSelectable">
           <label class="button button--is-full-width button--has-checkbox">
-            <input type="checkbox" v-model="isSelected" @change="$emit('change', character)">
+            <input type="checkbox" v-model="localSelection" @change="$emit('change', character)">
             {{ status }}
           </label>
         </li>
@@ -40,6 +40,16 @@ const options = Vue.extend({
       type: Object,
       required: true,
       default: null
+    },
+    isSelectable: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    isSelected: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   }
 });
@@ -55,7 +65,7 @@ const options = Vue.extend({
   }
 })
 export default class CharacterThumb extends options {
-  isSelected = false;
+  localSelection = this.isSelected;
 }
 </script>
 <style lang="scss" scoped>
@@ -73,12 +83,15 @@ $white: #fff;
   border-radius: 5px;
   padding: 40px 10px 10px 10px;
   margin: 10px 0;
+
   &__image {
     width: 100%;
   }
+
   &__description {
     text-align: center;
   }
+
   &__actions {
     list-style: none;
     display: flex;
@@ -89,7 +102,7 @@ $white: #fff;
     li {
       flex-grow: 1;
       flex-basis: 50%;
-      &:first-of-type {
+      &:first-of-type:not(:only-of-type) {
         margin-right: 10px;
       }
     }

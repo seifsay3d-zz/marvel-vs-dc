@@ -16,7 +16,7 @@
             <img
               class="content__img"
               src="https://66.media.tumblr.com/4f75bcc996fd0bbc205bb9949deb885b/tumblr_oo554mii3u1ushyv6o2_1280.png"
-            />
+            >
           </div>
         </div>
       </s-slide>
@@ -31,7 +31,7 @@
             <img
               class="content__img"
               src="https://66.media.tumblr.com/0eeffd106d0c7629e6cc27fefb54cfdd/tumblr_opftgedswX1ushyv6o1_1280.png"
-            />
+            >
           </div>
         </div>
       </s-slide>
@@ -41,6 +41,8 @@
         v-for="char in characters"
         :key="char.name"
         :character="char"
+        :is-selectable="true"
+        :is-selected="isCharacterSelceted(char)"
         @change="updateMatchCharacters"
       ></character-thumb>
     </div>
@@ -88,11 +90,22 @@ export default class CharacterList extends Vue {
     let index = this.matchedCharacters.map(e => e.id).indexOf(character.id);
 
     if (index < 0) {
+      if (this.matchedCharacters.length === 2) {
+        Vue.set(this.matchedCharacters, 0, character);
+        return;
+      }
+
       this.matchedCharacters.push(character);
       return;
     }
 
     this.matchedCharacters.splice(index, 1);
+  }
+
+  isCharacterSelceted(character: Character) {
+    return this.matchedCharacters.find(c => c.id === character.id)
+      ? true
+      : false;
   }
 
   goToMatch() {
