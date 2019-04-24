@@ -1,16 +1,9 @@
 <template>
   <div class="character">
-    <img
-      class="character__image"
-      src="https://cdn.icon-icons.com/icons2/1736/PNG/512/4043232-avatar-batman-comics-hero_113278.png"
-    >
+    <img class="character__image" :src="character.image" />
     <div class="character__description">
       <h1 class="character__header">{{ character.name }}</h1>
-      <p class="character__parahraph">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-        dolorem dolor inventore asperiores iure voluptatibus, omnis laboriosam
-        natus sapiente placeat.
-      </p>
+      <p class="character__parahraph">{{ character.description }}</p>
     </div>
     <div class="chracter__buttons">
       <ul class="character__actions">
@@ -23,11 +16,16 @@
                 id: character.id
               }
             }"
-          >Show</router-link>
+            >Show</router-link
+          >
         </li>
         <li>
           <label class="button button--is-full-width button--has-checkbox">
-            <input type="checkbox" v-model="isSelected" @change="$emit('change', character)">
+            <input
+              type="checkbox"
+              v-model="isSelected"
+              @change="$emit('change', character)"
+            />
             {{ status }}
           </label>
         </li>

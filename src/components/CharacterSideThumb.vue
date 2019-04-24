@@ -1,15 +1,11 @@
 <template>
   <div class="character">
     <div class="character__image">
-      <img
-        src="https://cdn.icon-icons.com/icons2/1736/PNG/512/4043232-avatar-batman-comics-hero_113278.png"
-      />
+      <img :src="character.image">
     </div>
     <div class="character__content">
       <div class="character__name">{{ character.name }}</div>
-      <div class="character_text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, ratione?
-      </div>
+      <div class="character_text">{{ character.description }}</div>
     </div>
   </div>
 </template>
