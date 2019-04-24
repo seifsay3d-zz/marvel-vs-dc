@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Characters from "./views/Characters/CharactersList.vue";
-import Matches from "./views/Characters/CharacterMatches.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -21,7 +20,7 @@ export default new Router({
     {
       path: "/match/:first/:second",
       name: "match",
-      component: () => import("./views/Characters/CharacterChallenge.vue")
+      component: () => import("./views/Characters/CharacterMatch.vue")
     },
     {
       path: "/matches",
