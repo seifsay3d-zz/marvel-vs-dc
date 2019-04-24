@@ -11,7 +11,7 @@ const vars = {
 const StyledNavLi = styled("li", props)`
   display: flex;
   color: white;
-  padding: 0px 20px;
+  padding: 10px 20px;
   border-right: 1px solid ${vars.borderColor};
   border-left: 1px solid ${vars.borderColor};
   align-items: center;
