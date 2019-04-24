@@ -1,149 +1,58 @@
 {
   "list": [
     {
-      "id": 9,
-      "name": "sdf",
-      "hoba": "ew"
+      "id": 1,
+      "name": "Iron Man",
+      "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-ironman-red_97409.png",
+      "description": "You know, it's moments like these when I realize what a superhero I am."
     },
     {
       "id": 2,
-      "name": "Zzzax"
+      "name": "Spiderman",
+      "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-spiderman-morales_97418.png",
+      "description": "with great power comes great responsibility"
     },
     {
       "id": 3,
-      "name": "Zota"
+      "name": "Wolverine",
+      "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-logan_97423.png",
+      "description": "Look, kid. You and I are gonna be good friends."
     },
     {
       "id": 4,
-      "name": "Zorr"
+      "name": "Captain America",
+      "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-captain-america_97404.png",
+      "description": "The price of freedom is high. And it's a price I'm willing to pay."
     },
     {
       "id": 5,
-      "name": "Zombie "
+      "name": "Spiderwoman",
+      "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-spiderwoman_97425.png",
+      "description": "I've had more combat training that you'd ever had in your life"
     },
     {
-      "id": 1,
-      "name": "Zom"
+      "id": 6,
+      "name": "Mummy",
+      "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-mummy_97427.png",
+      "description": "with great power comes great responsibility"
     },
     {
-      "id": 1,
-      "name": "Zoe Culloden"
+      "id": 7,
+      "name": "Rulk",
+      "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-rulk-angry_97470.png",
+      "description": "with great power comes great responsibility"
     },
     {
-      "id": 1,
-      "name": "Zodiak"
+      "id": 8,
+      "name": "Jhony Blaze",
+      "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-johnny-blaze_97474.png",
+      "description": "with great power comes great responsibility"
     },
     {
-      "id": 1,
-      "name": "Zodiac "
-    },
-    {
-      "id": 1,
-      "name": "Ziran"
-    },
-    {
-      "id": 1,
-      "name": "Zhou Cheng"
-    },
-    {
-      "id": 1,
-      "name": "Zhered-Na"
-    },
-    {
-      "id": 1,
-      "name": "Zeus"
-    },
-    {
-      "id": 1,
-      "name": "Zero"
-    },
-    {
-      "id": 1,
-      "name": "Zephyr"
-    },
-    {
-      "id": 1,
-      "name": "Zefra"
-    },
-    {
-      "id": 1,
-      "name": "Zed"
-    },
-    {
-      "id": 1,
-      "name": "Zaxton"
-    },
-    {
-      "id": 1,
-      "name": "Zarek"
-    },
-    {
-      "id": 1,
-      "name": "Zarathos"
-    },
-    {
-      "id": 1,
-      "name": "Zan Philo"
-    },
-    {
-      "id": 1,
-      "name": "Zalkor"
-    },
-    {
-      "id": 1,
-      "name": "Zakaius"
-    },
-    {
-      "id": 1,
-      "name": "Zahgurim"
-    },
-    {
-      "id": 1,
-      "name": "Zadkiel"
-    },
-    {
-      "id": 1,
-      "name": "Za'ken"
-    },
-    {
-      "id": 1,
-      "name": "Yukio"
-    },
-    {
-      "id": 1,
-      "name": "Yuki"
-    },
-    {
-      "id": 1,
-      "name": "Yssa"
-    },
-    {
-      "id": 1,
-      "name": "Yondu"
-    },
-    {
-      "id": 1,
-      "name": "Yon-Rogg"
-    },
-    {
-      "id": 1,
-      "name": "Yogi Dakor"
-    },
-    {
-      "id": 1,
-      "name": "Yo-Yo"
-    },
-    {
-      "id": 1,
-      "name": "Ymir"
-    },
-    {
-      "id": 1,
-      "name": "Yidrazil"
-    },
-    {
-      "id": 1,
-      "name": "Yellowjacket "
+      "id": 9,
+      "name": "Batman",
+      "image": "https://cdn.icon-icons.com/icons2/1736/PNG/512/4043232-avatar-batman-comics-hero_113278.png",
+      "description": "I'm Batman!"
     }
   ]
 }
