@@ -28,6 +28,7 @@ body {
 
 .button {
   display: inline-block;
+  cursor: pointer;
   background: #ffc500;
   padding: 10px 25px;
   border-radius: 5px;
