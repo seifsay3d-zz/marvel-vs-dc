@@ -16,7 +16,7 @@
             <img
               class="content__img"
               src="https://66.media.tumblr.com/4f75bcc996fd0bbc205bb9949deb885b/tumblr_oo554mii3u1ushyv6o2_1280.png"
-            >
+            />
           </div>
         </div>
       </s-slide>
@@ -31,7 +31,7 @@
             <img
               class="content__img"
               src="https://66.media.tumblr.com/0eeffd106d0c7629e6cc27fefb54cfdd/tumblr_opftgedswX1ushyv6o1_1280.png"
-            >
+            />
           </div>
         </div>
       </s-slide>
@@ -44,9 +44,11 @@
         @change="updateMatchCharacters"
       ></character-thumb>
     </div>
-    <div v-if="isMatchReady">
-      <button class="button" @click="goToMatch">GO</button>
-    </div>
+    <transition name="fade">
+      <div class="match_button" v-if="isMatchReady">
+        <button class="button" @click="goToMatch">See whos' better!</button>
+      </div>
+    </transition>
   </div>
 </template>
 <script lang="ts">
@@ -136,5 +138,20 @@ export default class CharacterList extends Vue {
     width: 100%;
     height: auto;
   }
+}
+
+.match_button {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  padding: 10px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
