@@ -1,6 +1,6 @@
 <template>
-  <div class="character">
-    <img class="character__image" :src="character.image" />
+  <div :class="['character', { 'character--is-selected': isSelected }]">
+    <img class="character__image" :src="character.image">
     <div class="character__description">
       <h1 class="character__header">{{ character.name }}</h1>
       <p class="character__parahraph">{{ character.description }}</p>
@@ -16,16 +16,11 @@
                 id: character.id
               }
             }"
-            >Show</router-link
-          >
+          >Show</router-link>
         </li>
         <li>
           <label class="button button--is-full-width button--has-checkbox">
-            <input
-              type="checkbox"
-              v-model="isSelected"
-              @change="$emit('change', character)"
-            />
+            <input type="checkbox" v-model="isSelected" @change="$emit('change', character)">
             {{ status }}
           </label>
         </li>
@@ -98,6 +93,12 @@ $white: #fff;
         margin-right: 10px;
       }
     }
+  }
+
+  &--is-selected {
+    background: #111;
+    color: white;
+    transition: all 0.5s;
   }
 }
 </style>
