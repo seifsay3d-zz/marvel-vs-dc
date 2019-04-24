@@ -18,7 +18,7 @@ export default new Router({
       component: () => import("./views/Characters/CharacterView.vue")
     },
     {
-      path: "/match/:first/:second",
+      path: "/matches/:first/:second",
       name: "match",
       component: () => import("./views/Characters/CharacterMatch.vue")
     },
