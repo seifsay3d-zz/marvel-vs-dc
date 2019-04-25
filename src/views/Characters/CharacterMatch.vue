@@ -1,18 +1,18 @@
 <template>
   <div class="match" v-if="match">
-    <h1>Who's Better?</h1>
+    <dc-header>Who's Stronger?</dc-header>
     <div class="match__wrapper">
       <character-votable
+        :votes="match.first.votes"
         :character="match.first.character"
         @winner="vote"
       ></character-votable>
-      {{ match.first.votes }}
       <span class="match__symbol">vs</span>
       <character-votable
+        :votes="match.second.votes"
         :character="match.second.character"
         @winner="vote"
       ></character-votable>
-      {{ match.second.votes }}
     </div>
   </div>
 </template>

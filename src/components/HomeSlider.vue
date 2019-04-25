@@ -5,9 +5,9 @@
         <div class="content__left">
           <h1>Spiderman is back</h1>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Molestiae ipsam temporibus modi natus commodi dolor quisquam
-            asperiores aperiam soluta illum.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
+            ipsam temporibus modi natus commodi dolor quisquam asperiores
+            aperiam soluta illum.
           </p>
           <button class="button">Read more</button>
         </div>
@@ -15,7 +15,7 @@
           <img
             class="content__img"
             src="https://66.media.tumblr.com/4f75bcc996fd0bbc205bb9949deb885b/tumblr_oo554mii3u1ushyv6o2_1280.png"
-          >
+          />
         </div>
       </div>
     </s-slide>
@@ -30,7 +30,7 @@
           <img
             class="content__img"
             src="https://66.media.tumblr.com/0eeffd106d0c7629e6cc27fefb54cfdd/tumblr_opftgedswX1ushyv6o1_1280.png"
-          >
+          />
         </div>
       </div>
     </s-slide>
@@ -49,9 +49,7 @@ import SSlide from "@/components/SSlide.vue";
     SSlider
   }
 })
-export default class HomeSlider extends Vue {
-
-}
+export default class HomeSlider extends Vue {}
 </script>
 
 <style lang="scss" scoped>
@@ -73,14 +71,12 @@ export default class HomeSlider extends Vue {
     flex-basis: 50%;
     flex-grow: 1;
     width: 50%;
+    justify-content: flex-end;
   }
 
   &__img {
-    display: block;
-    width: 100%;
-    height: auto;
+    object-fit: contain;
+    object-position: right;
   }
 }
-
 </style>
-

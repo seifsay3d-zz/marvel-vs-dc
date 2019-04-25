@@ -1,17 +1,18 @@
 <template>
-  <div class="strongest-characters">
-    <div class="strongest-characters__title">
-      <h1>The Best Of Marvel!</h1>
+  <dc-container>
+    <div class="strongest-characters">
+      <dc-header>Strongest Characters</dc-header>
+      <div class="strongest-characters__list">
+        <div
+          class="strongest-characters__character"
+          v-for="char in strongestCharacters"
+          :key="char.id"
+        >
+          <character-thumb :character="char" :is-selectable="false"></character-thumb>
+        </div>
+      </div>
     </div>
-    <div class="strongest-characters__list">
-      <character-thumb
-        v-for="char in strongestCharacters"
-        :key="char.name"
-        :character="char"
-        :is-selectable="false"
-      ></character-thumb>
-    </div>
-  </div>
+  </dc-container>
 </template>
 <script lang="ts">
 import Vue from "vue";
@@ -53,6 +54,12 @@ export default class StrongestCharacters extends Vue {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  &__character {
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: 24%;
   }
 }
 </style>

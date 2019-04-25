@@ -2,6 +2,7 @@
   <div>
     <home-slider></home-slider>
     <strongest-characters></strongest-characters>
+    <strongest-characters></strongest-characters>
   </div>
 </template>
 <script lang="ts">
@@ -18,5 +19,4 @@ import HomeSlider from "@/components/HomeSlider.vue";
 export default class Home extends Vue {}
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
