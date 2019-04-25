@@ -10,18 +10,16 @@
     }"
   >
     <div class="match__character">
-      <character-side-thumb
-        :character="match.first.character"
-      ></character-side-thumb>
-      <div class="match__votes">{{ match.first.votes }}</div>
+      <character-side-thumb :character="match.first.character">
+        <div class="match__votes">Votes: {{ match.first.votes }}</div>
+      </character-side-thumb>
     </div>
 
     <span class="match__sign">vs</span>
     <div class="match__character">
-      <character-side-thumb
-        :character="match.second.character"
-      ></character-side-thumb>
-      <div class="match__votes">{{ match.second.votes }}</div>
+      <character-side-thumb :character="match.second.character">
+        <div class="match__votes">Votes: {{ match.second.votes }}</div>
+      </character-side-thumb>
     </div>
   </router-link>
 </template>
@@ -44,6 +42,7 @@ import CharacterSideThumb from "@/components/CharacterSideThumb.vue";
 export default class ChracterMatchThumb extends Vue {}
 </script>
 <style lang="scss" scoped>
+@import "~@/assets/scss/vars.scss";
 .match {
   display: flex;
   width: 100%;
@@ -53,10 +52,13 @@ export default class ChracterMatchThumb extends Vue {}
   margin-top: 25px;
   text-decoration: none;
   color: black;
+  border-radius: 5px;
+  background: $secondary;
+  color: $white;
+  padding: 20px;
 
   &:hover {
-    color: white;
-    background: black;
+    background: $gray;
     transition: all 0.8s;
   }
   &__character {
@@ -66,14 +68,10 @@ export default class ChracterMatchThumb extends Vue {}
     align-items: center;
   }
 
-  &__votes {
-    font-size: 27px;
-    margin-left: 15px;
-  }
-
   &__sign {
     flex-grow: 1;
     text-align: center;
+    color: $primary;
   }
 }
 </style>

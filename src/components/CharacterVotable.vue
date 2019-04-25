@@ -1,11 +1,15 @@
 <template>
   <div class="character-votable">
-    <div class="character-votable__thumb">
-      <character-thumb :character="character"></character-thumb>
-    </div>
-    <div class="character-votable__button">
-      <button class="button" @click="vote">Vote</button>
-    </div>
+    <character-thumb :character="character">
+      <template #content>
+        <p>Recieved {{ votes }} votes</p>
+      </template>
+      <template #actions>
+        <li>
+          <button class="button button--is-fullwidth" @click="vote">Vote</button>
+        </li>
+      </template>
+    </character-thumb>
   </div>
 </template>
 <script lang="ts">
@@ -21,6 +25,10 @@ import CharacterThumb from "@/components/CharacterThumb.vue";
     character: {
       type: Object,
       requried: true
+    },
+    votes: {
+      type: Number,
+      required: false
     }
   }
 })
@@ -30,3 +38,10 @@ export default class CharacterVotable extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.character-votable {
+  display: flex;
+  flex-basis: 40%;
+}
+</style>

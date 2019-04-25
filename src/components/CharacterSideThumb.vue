@@ -1,11 +1,11 @@
 <template>
   <div class="character">
     <div class="character__image">
-      <img :src="character.image">
+      <img :src="character.image" />
     </div>
     <div class="character__content">
       <div class="character__name">{{ character.name }}</div>
-      <div class="character_text">{{ character.description }}</div>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -41,7 +41,8 @@ export default class CharacterSideThumb extends Vue {}
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    margin-left: 20px;
   }
 }
 </style>

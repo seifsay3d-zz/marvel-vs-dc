@@ -2,14 +2,15 @@
   <div :class="['character', { 'character--is-selected': isSelected }]">
     <img class="character__image" :src="character.image">
     <div class="character__description">
-      <h1 class="character__header">{{ character.name }}</h1>
-      <p class="character__parahraph">{{ character.description }}</p>
+      <h1>{{ character.name }}</h1>
+      <p>{{ character.description }}</p>
+      <slot name="content"></slot>
     </div>
     <div class="chracter__buttons">
       <ul class="character__actions">
         <li>
           <router-link
-            class="button button--is-full-width"
+            class="button button--is-fullwidth"
             :to="{
               name: 'character',
               params: {
@@ -19,11 +20,12 @@
           >Show</router-link>
         </li>
         <li v-if="isSelectable">
-          <label class="button button--is-full-width button--has-checkbox">
+          <label class="button button--is-fullwidth button--has-checkbox">
             <input type="checkbox" v-model="localSelection" @change="$emit('change', character)">
             {{ status }}
           </label>
         </li>
+        <slot name="actions"></slot>
       </ul>
     </div>
   </div>
@@ -69,20 +71,29 @@ export default class CharacterThumb extends options {
 }
 </script>
 <style lang="scss" scoped>
-$white: #fff;
+@import "~@/assets/scss/vars.scss";
+@import "~@/assets/scss/animations.scss";
 
 .character {
-  box-sizing: border-box;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
-  width: 23%;
-  border: 1px solid black;
+  background: $secondary;
+  color: $white;
   border-radius: 5px;
   padding: 40px 10px 10px 10px;
-  margin: 10px 0;
+  margin-bottom: 20px;
+  transition: all 0.5s;
+
+  &:hover &__image {
+    animation: shake-head 1s infinite;
+  }
 
   &__image {
     width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    height: auto;
   }
 
   &__description {
@@ -96,18 +107,16 @@ $white: #fff;
     margin: 0;
     padding: 0;
     justify-content: space-between;
-
     li {
       flex-grow: 1;
-      flex-basis: 50%;
-      &:first-of-type:not(:only-of-type) {
-        margin-right: 10px;
+      &:not(:last-of-type) {
+        margin-right: 20px;
       }
     }
   }
 
   &--is-selected {
-    background: #111;
+    background: $gray;
     color: white;
     transition: all 0.5s;
   }
