@@ -1,5 +1,10 @@
 <template>
-  <div v-if="character">{{ character.name }}</div>
+  <div v-if="character">
+    <div class="character__image"></div>
+    {{ character.name }}
+    {{ character.description }}
+    {{ character.power }}
+  </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
