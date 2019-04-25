@@ -4,18 +4,24 @@
     :to="{
       name: 'match',
       params: {
-        first: match.first.id,
-        second: match.second.id
+        first: match.first.character.id,
+        second: match.second.character.id
       }
     }"
   >
     <div class="match__character">
-      <character-side-thumb :character="match.first"></character-side-thumb>
+      <character-side-thumb
+        :character="match.first.character"
+      ></character-side-thumb>
+      <div class="match__votes">{{ match.first.votes }}</div>
     </div>
 
     <span class="match__sign">vs</span>
     <div class="match__character">
-      <character-side-thumb :character="match.second"></character-side-thumb>
+      <character-side-thumb
+        :character="match.second.character"
+      ></character-side-thumb>
+      <div class="match__votes">{{ match.second.votes }}</div>
     </div>
   </router-link>
 </template>
@@ -40,6 +46,7 @@ export default class ChracterMatchThumb extends Vue {}
 <style lang="scss" scoped>
 .match {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 
@@ -47,9 +54,21 @@ export default class ChracterMatchThumb extends Vue {}
   text-decoration: none;
   color: black;
 
+  &:hover {
+    color: white;
+    background: black;
+    transition: all 0.8s;
+  }
   &__character {
-    flex-grow: 1;
-    width: 30%;
+    display: flex;
+    flex-basis: 33%;
+    width: 33%;
+    align-items: center;
+  }
+
+  &__votes {
+    font-size: 27px;
+    margin-left: 15px;
   }
 
   &__sign {

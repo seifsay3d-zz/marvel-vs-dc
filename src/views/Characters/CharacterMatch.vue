@@ -2,9 +2,9 @@
   <div class="match" v-if="match">
     <h1>Who's Better?</h1>
     <div class="match__wrapper">
-      <character-thumb :character="match.first"></character-thumb>
+      <character-thumb :character="match.first.character"></character-thumb>
       <span class="match__symbol">vs</span>
-      <character-thumb :character="match.second"></character-thumb>
+      <character-thumb :character="match.second.character"></character-thumb>
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@ import { RootState } from "@/types";
     ...mapActions(["characters/getMatch"])
   }
 })
-export default class CharacterChallenge extends Vue {
+export default class CharacterMatch extends Vue {
   "characters/getMatch": any;
 
   created(): void {
