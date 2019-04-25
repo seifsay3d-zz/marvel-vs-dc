@@ -20,16 +20,18 @@ export default class App extends Vue {}
 
 <style lang="scss">
 @import "~normalize.css";
+@import "~@/assets/scss/vars.scss";
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans");
 
 body {
   font-family: "Noto Sans", sans-serif;
+  background: #333333;
 }
 
 .button {
   display: inline-block;
   cursor: pointer;
-  background: #ffc500;
+  background: $primary;
   padding: 10px 25px;
   border-radius: 5px;
   border: 0px;
@@ -39,13 +41,25 @@ body {
   font-size: 14px;
   text-transform: uppercase;
 
+  &:hover {
+    background: darken($primary, 5%);
+  }
+  &--danger {
+    background: $danger;
+    color: $white;
+
+    &:hover {
+      background: darken($danger, 5%);
+    }
+  }
+
   &--has-checkbox {
     input {
       display: none;
     }
   }
 
-  &--is-full-width {
+  &--is-fullwidth {
     padding: 10px 0px;
     width: 100%;
   }
