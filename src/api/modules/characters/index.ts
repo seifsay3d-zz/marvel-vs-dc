@@ -12,6 +12,7 @@ if (Config.mocks) {
   mock.onGet(ROUTES.GET_MATCHES).reply(200, MatchesMock.list);
   mock.onGet(`${ROUTES.GET_CHARACTER}`).reply(200, CharacterMock.list[0]);
   mock.onGet(`${ROUTES.GET_MATCH}`).reply(200, MatchesMock.list[0]);
+  mock.onPost(`${ROUTES.POST_VOTE}`).reply(200, MatchesMock.list[0]);
 }
 
 export default {
@@ -30,5 +31,8 @@ export default {
   },
   getMatch(first: number, second: number) {
     return axios.get(`${ROUTES.GET_MATCH}`);
+  },
+  postVote(payload) {
+    return axios.post(ROUTES.POST_VOTE, payload);
   }
 };

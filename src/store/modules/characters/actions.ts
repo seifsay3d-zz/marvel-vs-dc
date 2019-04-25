@@ -26,5 +26,10 @@ export default {
     CharactersAPI.getMatch(match.first, match.second)
       .then((res: any) => context.commit("updateMatch", res.data))
       .catch((err: any) => console.error(err));
+  },
+  postVote(context, payload) {
+    CharactersAPI.postVote(payload)
+      .then((res: any) => context.commit("updateMatch", res.data))
+      .catch((err: any) => console.error(err));
   }
 };
