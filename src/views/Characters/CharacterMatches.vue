@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <dc-container>
+    <dc-header>Matches</dc-header>
     <div class="matches_list" v-for="match in matches" :key="match.id">
       <character-match-thumb :match="match"></character-match-thumb>
     </div>
-  </div>
+  </dc-container>
 </template>
 
 <script lang="ts">
