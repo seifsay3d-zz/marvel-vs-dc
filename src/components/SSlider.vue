@@ -7,12 +7,16 @@
       class="slider__button slider__button--prev"
       :disabled="activeSlideIndex - 1 < 0"
       @click="updateSlideIndex(-1)"
-    ><</button>
+    >
+      <
+    </button>
     <button
       :disabled="activeSlideIndex + 1 >= slides.length"
       class="slider__button slider__button--next"
       @click="updateSlideIndex(1)"
-    >></button>
+    >
+      >
+    </button>
     <ul class="slider__dots">
       <li
         v-for="(slide, index) in slides"
@@ -76,7 +80,6 @@ $control-color: #fff;
   position: relative;
   background: #111;
   height: 550px;
-  margin-top: 10px;
   padding: 0 100px;
 
   &__slides {
