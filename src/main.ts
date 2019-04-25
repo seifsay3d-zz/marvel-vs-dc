@@ -3,7 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store/index";
 
-// console.log(store);
+import DcContainer from "./components/styled/container";
+import DcHeader from "./components/styled/header";
+
+Vue.component("dc-container", DcContainer);
+Vue.component("dc-header", DcHeader);
 Vue.config.productionTip = false;
 
 new Vue({
