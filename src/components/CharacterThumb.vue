@@ -70,9 +70,6 @@ export default class CharacterThumb extends options {
 </script>
 <style lang="scss" scoped>
 $white: #fff;
-.selected {
-  background: red;
-}
 
 .character {
   box-sizing: border-box;
@@ -90,6 +87,7 @@ $white: #fff;
 
   &__description {
     text-align: center;
+    flex-grow: 2;
   }
 
   &__actions {
