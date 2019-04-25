@@ -40,6 +40,7 @@ body {
   text-align: center;
   font-size: 14px;
   text-transform: uppercase;
+  outline: none;
 
   &:hover {
     background: darken($primary, 5%);

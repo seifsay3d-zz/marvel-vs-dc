@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+import Home from "./views/Home/Index.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -25,12 +25,12 @@ export default new Router({
     {
       path: "/matches/:first/:second",
       name: "match",
-      component: () => import("./views/Characters/CharacterMatch.vue")
+      component: () => import("./views/Matches/MatchView.vue")
     },
     {
       path: "/matches",
       name: "matches",
-      component: () => import("./views/Characters/CharacterMatches.vue")
+      component: () => import("./views/Matches/MatchList.vue")
     }
   ]
 });

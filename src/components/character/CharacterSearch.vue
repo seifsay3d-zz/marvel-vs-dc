@@ -6,12 +6,9 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import MDCInput from "@/components/user-interface/mdc-input";
 
 @Component({
-  components: {
-    "mdc-input": MDCInput
-  }
+  components: {}
 })
 export default class ChracterSearch extends Vue {
   characterName = null;

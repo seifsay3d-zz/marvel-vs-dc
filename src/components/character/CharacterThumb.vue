@@ -1,6 +1,6 @@
 <template>
   <div :class="['character', { 'character--is-selected': isSelected }]">
-    <img class="character__image" :src="character.image">
+    <img class="character__image" :src="character.image" />
     <div class="character__description">
       <h1>{{ character.name }}</h1>
       <p>{{ character.description }}</p>
@@ -17,11 +17,16 @@
                 id: character.id
               }
             }"
-          >Show</router-link>
+            >Show</router-link
+          >
         </li>
         <li v-if="isSelectable">
           <label class="button button--is-fullwidth button--has-checkbox">
-            <input type="checkbox" v-model="localSelection" @change="$emit('change', character)">
+            <input
+              type="checkbox"
+              v-model="localSelection"
+              @change="$emit('change', character)"
+            />
             {{ status }}
           </label>
         </li>
@@ -33,7 +38,6 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import SThumb from "@/components/shared/character-thumbs.ts";
 import { Character } from "@/types";
 
 const options = Vue.extend({
@@ -57,9 +61,7 @@ const options = Vue.extend({
 });
 
 @Component<CharacterThumb>({
-  components: {
-    SThumb
-  },
+  components: {},
   computed: {
     status() {
       return !this.isSelected ? "Choose" : "Return";

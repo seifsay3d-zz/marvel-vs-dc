@@ -6,7 +6,9 @@
       </template>
       <template #actions>
         <li>
-          <button class="button button--is-fullwidth" @click="vote">Vote</button>
+          <button class="button button--is-fullwidth" @click="vote">
+            Vote
+          </button>
         </li>
       </template>
     </character-thumb>
@@ -15,7 +17,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import CharacterThumb from "@/components/CharacterThumb.vue";
+import CharacterThumb from "@/components/character/CharacterThumb.vue";
 
 @Component({
   components: {

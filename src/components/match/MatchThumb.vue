@@ -27,7 +27,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import CharacterSideThumb from "@/components/CharacterSideThumb.vue";
+import CharacterSideThumb from "@/components/character/CharacterSideThumb.vue";
 @Component({
   components: {
     CharacterSideThumb
@@ -39,7 +39,7 @@ import CharacterSideThumb from "@/components/CharacterSideThumb.vue";
     }
   }
 })
-export default class ChracterMatchThumb extends Vue {}
+export default class MatchThumb extends Vue {}
 </script>
 <style lang="scss" scoped>
 @import "~@/assets/scss/vars.scss";

@@ -15,7 +15,7 @@
           <img
             class="content__img"
             src="https://66.media.tumblr.com/4f75bcc996fd0bbc205bb9949deb885b/tumblr_oo554mii3u1ushyv6o2_1280.png"
-          />
+          >
         </div>
       </div>
     </s-slide>
@@ -30,7 +30,7 @@
           <img
             class="content__img"
             src="https://66.media.tumblr.com/0eeffd106d0c7629e6cc27fefb54cfdd/tumblr_opftgedswX1ushyv6o1_1280.png"
-          />
+          >
         </div>
       </div>
     </s-slide>
@@ -40,8 +40,8 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import SSlider from "@/components/SSlider.vue";
-import SSlide from "@/components/SSlide.vue";
+import SSlider from "@/components/user-interface/SSlider.vue";
+import SSlide from "@/components/user-interface/SSlide.vue";
 
 @Component({
   components: {

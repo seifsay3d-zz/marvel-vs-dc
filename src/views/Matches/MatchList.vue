@@ -12,7 +12,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { mapState, mapActions } from "vuex";
 import { RootState } from "@/types";
-import CharacterMatchThumb from "@/components/CharacterMatchThumb.vue";
+import CharacterMatchThumb from "@/components/match/MatchThumb.vue";
 
 @Component({
   components: {

@@ -8,8 +8,8 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import StrongestCharacters from "@/components/StrongestCharacters.vue";
-import HomeSlider from "@/components/HomeSlider.vue";
+import StrongestCharacters from "@/components/character/StrongestCharacters.vue";
+import HomeSlider from "@/components/home/HomeSlider.vue";
 @Component({
   components: {
     HomeSlider,

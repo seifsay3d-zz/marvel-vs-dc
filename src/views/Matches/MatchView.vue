@@ -20,7 +20,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { mapState, mapActions } from "vuex";
-import CharacterVotable from "@/components/CharacterVotable.vue";
+import CharacterVotable from "@/components/character/CharacterVotable.vue";
 import { RootState } from "@/types";
 
 @Component({

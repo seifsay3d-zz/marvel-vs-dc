@@ -24,17 +24,13 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import CharacterThumb from "@/components/CharacterThumb.vue";
-import SSlider from "@/components/SSlider.vue";
-import SSlide from "@/components/SSlide.vue";
+import CharacterThumb from "@/components/character/CharacterThumb.vue";
 import { mapState, mapActions } from "vuex";
 import { RootState, Character } from "@/types";
 
 @Component({
   components: {
-    CharacterThumb,
-    SSlide,
-    SSlider
+    CharacterThumb
   },
   computed: mapState({
     characters: (state: RootState) => state.characters.list,

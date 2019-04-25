@@ -8,7 +8,10 @@
           v-for="char in strongestCharacters"
           :key="char.id"
         >
-          <character-thumb :character="char" :is-selectable="false"></character-thumb>
+          <character-thumb
+            :character="char"
+            :is-selectable="false"
+          ></character-thumb>
         </div>
       </div>
     </div>
@@ -17,7 +20,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import CharacterThumb from "@/components/CharacterThumb.vue";
+import CharacterThumb from "@/components/character/CharacterThumb.vue";
 import { mapState, mapActions, mapGetters } from "vuex";
 import { RootState, Character } from "@/types";
 
