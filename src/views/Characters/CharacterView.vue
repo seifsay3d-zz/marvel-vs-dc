@@ -1,10 +1,18 @@
 <template>
-  <div v-if="character">
-    <div class="character__image"></div>
-    {{ character.name }}
-    {{ character.description }}
-    {{ character.power }}
-  </div>
+  <dc-container v-if="character">
+    <div class="card">
+      <div class="card__image">
+        <img :src="character.image" />
+      </div>
+      <div class="card__content">
+        <div>
+          <dc-header>{{ character.name }}</dc-header>
+          <p>{{ character.description }}</p>
+          {{ character.power }}
+        </div>
+      </div>
+    </div>
+  </dc-container>
 </template>
 <script lang="ts">
 import Vue from "vue";
@@ -27,4 +35,23 @@ export default class CharacterView extends Vue {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import "~@/assets/scss/vars.scss";
+.card {
+  display: flex;
+  background: $primary;
+  border-radius: 15px;
+  padding: 40px;
+
+  &__image {
+    flex-basis: 30%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    margin-left: 50px;
+  }
+}
+</style>
