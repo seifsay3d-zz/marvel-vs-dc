@@ -4,55 +4,64 @@
       "id": 1,
       "name": "Iron Man",
       "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-ironman-red_97409.png",
-      "description": "You know, it's moments like these when I realize what a superhero I am."
+      "description": "You know, it's moments like these when I realize what a superhero I am.",
+      "power": 98
     },
     {
       "id": 2,
       "name": "Spiderman",
       "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-spiderman-morales_97418.png",
-      "description": "with great power comes great responsibility"
+      "description": "with great power comes great responsibility",
+      "power": 97
     },
     {
       "id": 3,
       "name": "Wolverine",
       "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-logan_97423.png",
-      "description": "Look, kid. You and I are gonna be good friends."
+      "description": "Look, kid. You and I are gonna be good friends.",
+      "power": 92
     },
     {
       "id": 4,
       "name": "Captain America",
       "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-captain-america_97404.png",
-      "description": "The price of freedom is high. And it's a price I'm willing to pay."
+      "description": "The price of freedom is high. And it's a price I'm willing to pay.",
+      "power": 86
     },
     {
       "id": 5,
       "name": "Spiderwoman",
       "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-spiderwoman_97425.png",
-      "description": "I've had more combat training that you'd ever had in your life"
+      "description": "I've had more combat training that you'd ever had in your life",
+      "power": 77
     },
     {
       "id": 6,
       "name": "Mummy",
       "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-mummy_97427.png",
-      "description": "with great power comes great responsibility"
+      "description": "with great power comes great responsibility",
+      "power": 98
     },
     {
       "id": 7,
       "name": "Rulk",
       "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-rulk-angry_97470.png",
-      "description": "with great power comes great responsibility"
+      "description": "with great power comes great responsibility",
+      "power": 76
     },
     {
       "id": 8,
       "name": "Jhony Blaze",
       "image": "https://cdn.icon-icons.com/icons2/1412/PNG/512/comics-johnny-blaze_97474.png",
-      "description": "with great power comes great responsibility"
+      "description": "with great power comes great responsibility",
+      "power": 42
     },
     {
       "id": 9,
       "name": "Batman",
       "image": "https://cdn.icon-icons.com/icons2/1736/PNG/512/4043232-avatar-batman-comics-hero_113278.png",
-      "description": "I'm Batman!"
+      "description": "I'm Batman!",
+      "power": 98
     }
   ]
 }
