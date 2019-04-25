@@ -9,6 +9,7 @@ const StyledNav = styled.nav`
   display: flex;
   list-style: none;
   background: ${vars.background};
+  margin-bottom: 30px;
 `;
 
 export default StyledNav;
