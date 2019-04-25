@@ -30,8 +30,12 @@ if (Config.mocks) {
 }
 
 export default {
-  getCharacters() {
-    return axios.get(ROUTES.GET_CHARACTERS);
+  getCharacters(name: string) {
+    let params = {};
+    if (name) {
+      params.name = name;
+    }
+    return axios.get(ROUTES.GET_CHARACTERS, params);
   },
   getCharacter(id: number) {
     return axios.get(`${ROUTES.GET_CHARACTER}`);
