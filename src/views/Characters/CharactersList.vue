@@ -1,45 +1,9 @@
 <template>
   <div>
-    <s-slider>
-      <s-slide>
-        <div class="content">
-          <div class="content__left">
-            <h1>Spiderman is back</h1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Molestiae ipsam temporibus modi natus commodi dolor quisquam
-              asperiores aperiam soluta illum.
-            </p>
-            <button class="button">Read more</button>
-          </div>
-          <div class="content__right">
-            <img
-              class="content__img"
-              src="https://66.media.tumblr.com/4f75bcc996fd0bbc205bb9949deb885b/tumblr_oo554mii3u1ushyv6o2_1280.png"
-            >
-          </div>
-        </div>
-      </s-slide>
-      <s-slide class="red">
-        <div class="content">
-          <div class="content__left">
-            <h1>Avengers are cool !</h1>
-            <p>These are probably not the avengers but whatever ..</p>
-            <button>Read more</button>
-          </div>
-          <div class="content__right">
-            <img
-              class="content__img"
-              src="https://66.media.tumblr.com/0eeffd106d0c7629e6cc27fefb54cfdd/tumblr_opftgedswX1ushyv6o1_1280.png"
-            >
-          </div>
-        </div>
-      </s-slide>
-    </s-slider>
     <div class="characters_list">
       <character-thumb
         v-for="char in characters"
-        :key="char.name"
+        :key="char.id"
         :character="char"
         :is-selectable="true"
         :is-selected="isCharacterSelceted(char)"
@@ -74,7 +38,10 @@ import { RootState, Character } from "@/types";
       return this.matchedCharacters.length > 1;
     }
   }),
-  methods: mapActions(["characters/getCharacters"])
+  methods: mapActions([
+    "characters/getCharacters",
+    "characters/getCharactersByName"
+  ])
 })
 export default class CharacterList extends Vue {
   characters: any;
@@ -83,6 +50,13 @@ export default class CharacterList extends Vue {
   matchedCharacters: Character[] = [];
 
   created(): void {
+    const nameInQueryParams = this.$route.query.name;
+
+    if (nameInQueryParams) {
+      this[`characters/getCharactersByName`](nameInQueryParams);
+      return;
+    }
+
     this[`characters/getCharacters`]();
   }
 
