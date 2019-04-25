@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Characters from "./views/Characters/CharactersList.vue";
+import Home from "./views/Home.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -9,8 +9,13 @@ export default new Router({
   routes: [
     {
       path: "/",
+      name: "home",
+      component: Home
+    },
+    {
+      path: "/characters",
       name: "characters",
-      component: Characters
+      component: () => import("./views/Characters/CharactersList.vue")
     },
     {
       path: "/characters/:id",
