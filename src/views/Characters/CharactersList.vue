@@ -28,7 +28,8 @@ import CharacterThumb from "@/components/character/CharacterThumb.vue";
 import { mapState, mapActions } from "vuex";
 import { RootState, Character } from "@/types";
 
-@Component({
+const options = Vue.extend({});
+@Component<CharacterList>({
   components: {
     CharacterThumb
   },
@@ -43,10 +44,10 @@ import { RootState, Character } from "@/types";
     "characters/getCharactersByName"
   ])
 })
-export default class CharacterList extends Vue {
-  characters: any;
+export default class CharacterList extends options {
+  characters: Character[];
   "characters/getCharacters": any;
-
+  "characters/getCharactersByName": any;
   matchedCharacters: Character[] = [];
 
   created(): void {

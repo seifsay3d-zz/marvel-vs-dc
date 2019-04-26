@@ -9,18 +9,20 @@
       }
     }"
   >
-    <div class="match__character">
-      <character-side-thumb :character="match.first.character">
-        <div class="match__votes">Votes: {{ match.first.votes }}</div>
-      </character-side-thumb>
-    </div>
+    <character-side-thumb
+      class="match__character"
+      :character="match.first.character"
+    >
+      <div class="match__votes">Votes: {{ match.first.votes }}</div>
+    </character-side-thumb>
 
     <span class="match__sign">vs</span>
-    <div class="match__character">
-      <character-side-thumb :character="match.second.character">
-        <div class="match__votes">Votes: {{ match.second.votes }}</div>
-      </character-side-thumb>
-    </div>
+    <character-side-thumb
+      class="match__character"
+      :character="match.second.character"
+    >
+      <div class="match__votes">Votes: {{ match.second.votes }}</div>
+    </character-side-thumb>
   </router-link>
 </template>
 

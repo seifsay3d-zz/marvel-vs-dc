@@ -100,6 +100,7 @@ export default class CharacterThumb extends options {
 
   &__description {
     text-align: center;
+    min-height: 190px;
     flex-grow: 2;
   }
 
