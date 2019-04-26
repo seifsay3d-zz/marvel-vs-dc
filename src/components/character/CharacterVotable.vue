@@ -1,14 +1,12 @@
 <template>
-  <div class="character-votable">
-    <character-thumb :character="character">
+  <div :class="['character-votable']">
+    <character-thumb :class="[{ 'character-votable--is-winner': isWinner }]" :character="character">
       <template #content>
         <p>Recieved {{ votes }} votes</p>
       </template>
       <template #actions>
         <li>
-          <button class="button button--is-fullwidth" @click="vote">
-            Vote
-          </button>
+          <button class="button button--is-fullwidth" @click="vote">Vote</button>
         </li>
       </template>
     </character-thumb>
@@ -30,7 +28,11 @@ import CharacterThumb from "@/components/character/CharacterThumb.vue";
     },
     votes: {
       type: Number,
-      required: false
+      required: true
+    },
+    isWinner: {
+      type: Boolean,
+      required: true
     }
   }
 })
@@ -42,8 +44,10 @@ export default class CharacterVotable extends Vue {
 </script>
 
 <style lang="scss" scoped>
+/* @import "~@/assets/scss/vars.scss";
 .character-votable {
-  display: flex;
-  flex-basis: 40%;
-}
+  &--is-winner {
+    background: $danger;
+  }
+} */
 </style>

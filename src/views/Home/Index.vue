@@ -1,19 +1,20 @@
 <template>
   <div>
     <home-slider></home-slider>
-    <strongest-characters></strongest-characters>
-    <strongest-characters></strongest-characters>
+    <character-grouped-by-power type="strongest"></character-grouped-by-power>
+    <character-grouped-by-power type="weakest"></character-grouped-by-power>
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import StrongestCharacters from "@/components/character/StrongestCharacters.vue";
+import CharacterGroupedByPower from "@/components/character/CharacterGroupedByPower.vue";
 import HomeSlider from "@/components/home/HomeSlider.vue";
+
 @Component({
   components: {
     HomeSlider,
-    StrongestCharacters
+    CharacterGroupedByPower
   }
 })
 export default class Home extends Vue {}
