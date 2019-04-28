@@ -13,30 +13,18 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Vue, Component, Prop } from "vue-property-decorator";
 import CharacterThumb from "@/components/character/CharacterThumb.vue";
-
+import { Character } from "@/types";
 @Component({
   components: {
     CharacterThumb
-  },
-  props: {
-    character: {
-      type: Object,
-      requried: true
-    },
-    votes: {
-      type: Number,
-      required: true
-    },
-    isWinner: {
-      type: Boolean,
-      required: true
-    }
   }
 })
 export default class CharacterVotable extends Vue {
+  @Prop({ required: true }) readonly character!: Character;
+  @Prop({ required: true }) readonly votes!: number;
+  @Prop({ required: true }) readonly isWinner!: boolean;
   vote() {
     this.$emit("winner", this.character.id);
   }
@@ -44,10 +32,4 @@ export default class CharacterVotable extends Vue {
 </script>
 
 <style lang="scss" scoped>
-/* @import "~@/assets/scss/vars.scss";
-.character-votable {
-  &--is-winner {
-    background: $danger;
-  }
-} */
 </style>

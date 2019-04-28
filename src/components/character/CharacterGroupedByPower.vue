@@ -15,39 +15,39 @@
   </dc-container>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Vue, Component, Prop } from "vue-property-decorator";
+
 import CharacterThumb from "@/components/character/CharacterThumb.vue";
 import { mapState, mapActions, mapGetters } from "vuex";
 import { RootState, Character } from "@/types";
 
 @Component({
-  props: {
-    type: {
-      type: String,
-      validator: val => ["strongest", "weakest"].includes(val),
-      required: true
-    }
-  },
   components: {
     CharacterThumb
-  },
-  computed: {
-    characters() {
-      const isAsc = this.type === "strongest" ? false : true;
-      return this.charactersByPower(isAsc);
-    },
-    ...mapGetters({
-      charactersByPower: "characters/getCharactersByPower"
-    })
-  },
-  methods: mapActions(["characters/getCharacters"])
+  }
 })
 export default class CharacterGroupedByPower extends Vue {
-  "characters/getCharacters": any;
+  @Prop({
+    default: "strongest",
+    validator: (val: string) => ["strongest", "weakest"].includes(val)
+  })
+  readonly type!: string;
 
   created(): void {
-    this[`characters/getCharacters`]();
+    this.getCharacters();
+  }
+
+  getCharacters() {
+    this.$store.dispatch("characters/getCharacters");
+  }
+
+  get charactersByPower() {
+    return this.$store.getters["characters/getCharactersByPower"];
+  }
+
+  get characters() {
+    const isAsc = this.type === "strongest" ? false : true;
+    return this.charactersByPower(isAsc);
   }
 }
 </script>
