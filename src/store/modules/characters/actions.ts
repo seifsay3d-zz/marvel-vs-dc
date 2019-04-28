@@ -1,4 +1,4 @@
-import { CharacterMatch } from "@/types";
+import { MatchPayload, MatchVotePayload } from "@/types";
 import CharactersAPI from "@/api/modules/characters";
 
 export default {
@@ -22,12 +22,12 @@ export default {
       .then((res: any) => context.commit("updateMatches", res.data))
       .catch((err: any) => console.error(err));
   },
-  getMatch(context: any, match: CharacterMatch) {
+  getMatch(context: any, match: MatchPayload) {
     CharactersAPI.getMatch(match.first, match.second)
       .then((res: any) => context.commit("updateMatch", res.data))
       .catch((err: any) => console.error(err));
   },
-  postVote(context, payload) {
+  postVote(context: any, payload: MatchVotePayload) {
     CharactersAPI.postVote(payload)
       .then((res: any) => context.commit("updateMatch", res.data))
       .catch((err: any) => console.error(err));

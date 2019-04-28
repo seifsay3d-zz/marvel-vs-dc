@@ -5,6 +5,7 @@ import MatchesMock from "@/api/modules/characters/matchesMock.json";
 import MockAdapter from "axios-mock-adapter";
 
 import ROUTES from "@/api/modules/characters/routes";
+import { CharacterSearch, MatchVotePayload } from "@/types";
 
 if (Config.mocks) {
   const mock = new MockAdapter(axios);
@@ -16,12 +17,12 @@ if (Config.mocks) {
 }
 
 export default {
-  getCharacters(name: string) {
-    let params = {};
+  getCharacters(name?: string) {
+    let params: CharacterSearch = {};
     if (name) {
       params.name = name;
     }
-    return axios.get(ROUTES.GET_CHARACTERS, params);
+    return axios.get<CharacterSearch>(ROUTES.GET_CHARACTERS, params);
   },
   getCharacter(id: number) {
     return axios.get(`${ROUTES.GET_CHARACTER}`);
@@ -32,7 +33,7 @@ export default {
   getMatch(first: number, second: number) {
     return axios.get(`${ROUTES.GET_MATCH}`);
   },
-  postVote(payload) {
+  postVote(payload: MatchVotePayload) {
     return axios.post(ROUTES.POST_VOTE, payload);
   }
 };

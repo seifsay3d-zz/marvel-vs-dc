@@ -11,7 +11,7 @@ import Component from "vue-class-component";
   components: {}
 })
 export default class ChracterSearch extends Vue {
-  characterName = null;
+  characterName = "";
 
   onSubmit() {
     this.$router.push({
@@ -20,7 +20,7 @@ export default class ChracterSearch extends Vue {
         name: this.characterName
       }
     });
-    this.characterName = null;
+    this.characterName = "";
   }
 }
 </script>

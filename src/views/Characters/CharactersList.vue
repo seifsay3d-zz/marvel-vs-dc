@@ -14,9 +14,7 @@
     </div>
     <transition name="fade">
       <div class="match_button" v-if="isMatchReady">
-        <button class="button button--danger" @click="goToMatch">
-          See whos' better!
-        </button>
+        <button class="button button--danger" @click="goToMatch">See whos' better!</button>
       </div>
     </transition>
   </dc-container>
@@ -27,14 +25,11 @@ import Component from "vue-class-component";
 import CharacterThumb from "@/components/character/CharacterThumb.vue";
 import { mapState, mapActions } from "vuex";
 import { RootState, Character } from "@/types";
-
-const options = Vue.extend({});
 @Component<CharacterList>({
   components: {
     CharacterThumb
   },
   computed: mapState({
-    characters: (state: RootState) => state.characters.list,
     isMatchReady() {
       return this.matchedCharacters.length > 1;
     }
@@ -44,11 +39,14 @@ const options = Vue.extend({});
     "characters/getCharactersByName"
   ])
 })
-export default class CharacterList extends options {
-  characters: Character[];
+export default class CharacterList extends Vue {
   "characters/getCharacters": any;
   "characters/getCharactersByName": any;
   matchedCharacters: Character[] = [];
+
+  get characters() {
+    return this.$store.state.characters.list;
+  }
 
   created(): void {
     const nameInQueryParams = this.$route.query.name;
@@ -84,13 +82,15 @@ export default class CharacterList extends options {
   }
 
   goToMatch() {
-    this.$router.push({
+    const matchRoute = {
       name: "match",
       params: {
-        first: this.matchedCharacters[0].id,
-        second: this.matchedCharacters[1].id
+        first: `${this.matchedCharacters[0].id}`,
+        second: `${this.matchedCharacters[1].id}`
       }
-    });
+    };
+
+    this.$router.push(matchRoute);
   }
 }
 </script>
