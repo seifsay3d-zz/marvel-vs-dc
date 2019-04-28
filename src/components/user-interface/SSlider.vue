@@ -8,14 +8,14 @@
       :disabled="activeSlideIndex - 1 < 0"
       @click="updateSlideIndex(-1)"
     >
-      <
+      <span>&#8678;</span>
     </button>
     <button
       :disabled="activeSlideIndex + 1 >= slides.length"
       class="slider__button slider__button--next"
       @click="updateSlideIndex(1)"
     >
-      >
+      <span>&#8680;</span>
     </button>
     <ul class="slider__dots">
       <li
@@ -29,38 +29,30 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-
-@Component({
-  provide() {
-    return {
-      slider: this
-    };
-  },
-  watch: {
-    activeSlideIndex: {
-      handler: function() {
-        this.slides.forEach((item, index) => {
-          if (this.activeSlideIndex == index) {
-            item.$el.style.display = "block";
-          } else {
-            item.$el.style.display = "none";
-          }
-        });
-      },
-      immediate: false
-    }
-  }
-})
+import { Vue, Component, Watch } from "vue-property-decorator";
+@Component({})
 export default class Slider extends Vue {
-  slides = [];
+  slides: any = [];
   activeSlideIndex = 0;
+
+  @Watch("activeSlideIndex", { immediate: true })
+  onActiveSlideIndexChanged() {
+    this.slides.forEach((item: any, index: number) => {
+      if (this.activeSlideIndex == index) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
   mounted() {
-    this.slides =
-      this.$slots && this.$slots.default
-        ? this.$slots.default.map(s => s.componentInstance)
-        : [];
+    this.slides = this.$slots.default
+      ? this.$slots.default.map(s => {
+          if (s.componentInstance && s.componentInstance.$el) {
+            return s.componentInstance.$el;
+          }
+        })
+      : [];
   }
   updateSlideIndex(direction: number) {
     this.activeSlideIndex += direction;
