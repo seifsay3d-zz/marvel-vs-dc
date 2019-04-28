@@ -1,8 +1,14 @@
-export interface Character {
-  name: string;
-  id: number;
-}
+import { AxiosRequestConfig } from "axios";
 
+export interface Character {
+  id: number;
+  name: string;
+  description: string;
+  power: number;
+}
+export interface CharacterSearch extends AxiosRequestConfig {
+  name?: string;
+}
 export interface CharactersState {
   list: Character[];
   character: Character | null;
@@ -10,19 +16,28 @@ export interface CharactersState {
   matches: Match[] | null;
 }
 
-export interface CharacterMatch {
+export interface MatchPayload {
   first: number;
   second: number;
+}
+
+export interface MatchVotePayload {
+  character: number;
+  match: number;
 }
 
 export interface RootState {
   characters: CharactersState;
 }
 
-export interface CharacterStatus extends Character {
-  votes: number;
-}
 export interface Match {
-  first: CharacterStatus;
-  second: CharacterStatus;
+  id: number;
+  first: {
+    character: Character;
+    votes: number;
+  };
+  second: {
+    character: Character;
+    votes: number;
+  };
 }
